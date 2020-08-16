@@ -19,7 +19,8 @@ waka_key = os.getenv('INPUT_WAKATIME_API_KEY')
 ghtoken = os.getenv('INPUT_GH_TOKEN')
 show_title = os.getenv("INPUT_SHOW_TITLE")
 commit_message = os.getenv("INPUT_COMMIT_MESSAGE")
-
+done_block = os.getenv("INPUT_DONE_BLOCK")
+empty_block = os.getenv("INPUT_EMPTY_BLOCK")
 
 def this_week() -> str:
     '''Returns a week streak'''
@@ -31,8 +32,6 @@ def this_week() -> str:
 
 def make_graph(percent: float) -> str:
     '''Make progress graph from API graph'''
-    done_block = '█'
-    empty_block = '░'
     pc_rnd = round(percent)
     return f"{done_block*int(pc_rnd/4)}{empty_block*int(25-int(pc_rnd/4))}"
 

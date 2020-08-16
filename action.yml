@@ -26,6 +26,16 @@ inputs:
     description: "Add a commit message of your choice"
     default: "Updated the Graph with new Metrics"
     required: false
+    
+  DONE_BLOCK:
+    description: "Done block character"
+    default: "█"
+    required: false
+    
+  EMPTY_BLOCK:
+    description: "Empty block character"
+    default: "░"
+    required: false
 
 
 runs:

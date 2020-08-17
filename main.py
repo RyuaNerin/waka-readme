@@ -58,7 +58,7 @@ def get_stats() -> str:
         # following line provides a neat finish
         fmt_percent = format(lang['percent'], '0.2f').rjust(5)
         data_list.append(
-            f"{lang['name']}{' '*(pad + 3 - lth)}{' '*(16 - ln_text)}{lang['text']}{make_graph(lang['percent'])}   {fmt_percent} % ")
+            f"{lang['name']}{' '*(pad + 3 - lth)}{' '*(16 - ln_text)}{lang['text']} {make_graph(lang['percent'])}   {fmt_percent} % ")
     print("Graph Generated")
     data = '\n'.join(data_list)
     if show_title == 'true':

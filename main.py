@@ -52,7 +52,7 @@ def get_stats() -> str:
     except ValueError:
         print("The Data seems to be empty. Please wait for a day for the data to be filled in.")
         return '```text\nNo Activity tracked this Week\n```'
-    for lang in lang_data[:5]:
+    for lang in lang_data:
         lth = len(lang['name'])
         ln_text = len(lang['text'])
         # following line provides a neat finish

@@ -53,6 +53,7 @@ def get_stats() -> str:
     data_list = []
     try:
         pad = len(max([l['name'] for l in lang_data[:5]], key=len))
+        pad2 = len(max([l['text'] for l in lang_data[:5]], key=len))
     except ValueError:
         print("The Data seems to be empty. Please wait for a day for the data to be filled in.")
         return '```text\nNo Activity tracked this Week\n```'
@@ -62,9 +63,9 @@ def get_stats() -> str:
         lth = len(lang['name'])
         ln_text = len(lang['text'])
         # following line provides a neat finish
-        fmt_percent = format(lang['percent'], '0.2f').rjust(5)
+        fmt_percent = format(lang['percent'], '0.2f').rjust(6)
         data_list.append(
-            f"{lang['name']}{' '*(pad + 3 - lth)}{' '*(16 - ln_text)}{lang['text']} {make_graph(lang['percent'], blocks)}   {fmt_percent} % ")
+            f"{lang['name']}{' '*(pad + 3 - lth)}{' '*(pad2 - ln_text)}{lang['text']} {make_graph(lang['percent'], blocks)}  {fmt_percent} % ")
     print("Graph Generated")
     data = '\n'.join(data_list)
     if show_title == 'true':
